@@ -27,3 +27,7 @@ tabla_frecuencia <- data.frame(
   frec_rel = round(as.vector(f_rel), 3),
   frec_rel_acum = round(as.vector(f_rel_acum), 3)
 )
+
+tabla_frecuencia
+
+print(tabla_frecuencia, row.names = FALSE)
