@@ -1,6 +1,9 @@
 # TRABAJO PRÁCTICO INTEGRADOR - PUNTO 2
 # Análisis de datos de encuesta a estudiantes
 
+#Limpiamos el entorno
+rm(list = ls())
+
 # Cargamos la libreria necesaria para leer archivos Excel
 if (!require(readxl)) install.packages("readxl")
 library(readxl)
