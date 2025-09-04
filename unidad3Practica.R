@@ -39,6 +39,12 @@ discreta_stats <- data.frame(
 )
 print(discreta_stats, row.names = FALSE)
 
+# Cuartiles y RIC
+cuartiles <- quantile(datos[[variable_discreta]], probs = c(0.25,0.5,0.75), na.rm = TRUE)
+rango_intercuartil <- IQR(datos[[variable_discreta]], na.rm = TRUE)
+cuartiles
+cat("RIC:", rango_intercuartil,"\n")
+
 # ----- VARIABLE CONTINUA: Tiempo_Conexion_Min -------
 variable_continua <- "Tiempo_Conexion_Min"
 k <- ceiling(1 + 3.322 * log10(nrow(datos)))
