@@ -45,8 +45,8 @@ tabla_frecuencia <- data.frame(
 )
 
 #Calculo de media
-frecuencias <- as.vector(tabla_clases)
-media_continua <- sum(marca_clase * frecuencias) / sum(frecuencias)
+frecuencias <- as.vector(tabla_clases) # Frecuencias absolutas
+media_continua <- sum(marca_clase * frecuencias) / sum(frecuencias) # Media ponderada
 
 # Cálculo de moda
 i_modal <- which.max(frecuencias) #Indice de la clase modal
@@ -57,9 +57,9 @@ f_2 <- ifelse(i_modal == length(frecuencias), 0, frecuencias[i_modal + 1]) # Fre
 moda_continua <- L_m + ((f_m - f_1) / ((f_m - f_1) + (f_m - f_2))) * amplitud # Fórmula de la moda para datos agrupados
 
 # Cálculo de mediana
-n_total <- sum(frecuencias)
-n_2 <- n_total / 2
-clase_mediana_index <- which(f_acum >= n_2)[1]
+n_total <- sum(frecuencias) # Total de observaciones
+n_2 <- n_total / 2 # Mitad del total de observaciones
+clase_mediana_index <- which(f_acum >= n_2)[1] # Índice de la clase que contiene la mediana
 L <- cortes[clase_mediana_index]  # Límite inferior de la clase mediana
 F_anterior <- ifelse(clase_mediana_index == 1, 0, f_acum[clase_mediana_index - 1]) # Frecuencia acumulada antes de la clase mediana
 f_mediana <- frecuencias[clase_mediana_index] # Frecuencia de la clase mediana
