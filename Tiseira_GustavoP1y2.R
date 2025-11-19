@@ -17,8 +17,6 @@ cat("Nombres de las columnas:\n")
 print(colnames(datos))
 
 # 2a. TABLA DE FRECUENCIAS - TIEMPO SEMANAL EN HS. DEDIC. EST.
-cat("\n=== 2a. TABLA DE FRECUENCIAS - TIEMPO SEMANAL EN HS. DEDIC. EST. ===\n\n")
-
 # Cantidad total de observaciones
 n <- length(datos$`TIEMPO SEMANAL en HS. DEDIC. EST.`)
 cat("Cantidad total de observaciones:", n, "\n")
@@ -50,12 +48,10 @@ tabla_frecuencia_tiempos_estudio <- data.frame(
   Frec_Relativa = round(as.vector(f_rel), 4),
   Frec_Rel_Acum = round(as.vector(f_rel_acum), 4)
 )
-
+cat("\n=== 2a. TABLA DE FRECUENCIAS - TIEMPO SEMANAL EN HS. DEDIC. EST. ===\n\n")
 print(tabla_frecuencia_tiempos_estudio, row.names = FALSE)
 
 # 2b. TABLA DE FRECUENCIAS - SATISFACCIÓN CON LA CARRERA
-cat("\n=== 2b. TABLA DE FRECUENCIAS - SATISFACCIÓN CON LA CARRERA ===\n\n")
-
 # Convertir códigos numéricos a etiquetas descriptivas
 satisfaccion_labels <- c("1" = "Muy satisfecho", 
                          "2" = "Satisfecho", 
@@ -78,5 +74,6 @@ tabla_frecuencia_satisfaccion <- data.frame(
   frec_rel = round(as.vector(f_rel_satisfaccion), 4),
   frec_rel_acum = round(as.vector(f_rel_acum_satisfaccion), 4)
 )
-
+cat("\n=== 2b. TABLA DE FRECUENCIAS - SATISFACCIÓN CON LA CARRERA ===\n\n")
 print(tabla_frecuencia_satisfaccion, row.names = FALSE)
+

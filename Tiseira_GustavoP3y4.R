@@ -215,3 +215,4 @@ ggplot(tabla_satisfaccion_df, aes(x = "", y = Frec_Abs, fill = Categoria)) +
        fill = "Nivel de Satisfacción") +
   theme_void() +
   theme(legend.position = "right")
+
